@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090503">
+<meta name="description" content="A cinematic Ganesh Chaturthi digital darshan and personalized greeting experience by Kushagra Innovations.">
+<title>Ganpati Darshan — Kushagra Innovations</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root{
+  --bg:#070403;
+  --bg2:#130804;
+  --gold:#f4b95f;
+  --gold2:#ffcf82;
+  --saffron:#d96c20;
+  --cream:#f9e8c7;
+  --muted:#aa9277;
+  --line:rgba(244,185,95,.22);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  min-height:100vh;background:var(--bg);color:#fff;
+  font-family:Inter,Arial,sans-serif;overflow-x:hidden;
+}
+button,input{font:inherit}
+button{cursor:pointer}
+.hidden{display:none!important}
+
+#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:100}
+#grain{
+  position:fixed;inset:0;pointer-events:none;z-index:99;opacity:.045;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.screen{min-height:100svh;position:relative;overflow:hidden}
+
+/* shared */
+.kicker{font-size:9px;letter-spacing:5px;color:#bba486}
+.serif{font-family:"Cormorant Garamond",Georgia,serif}
+.goldText{
+  background:linear-gradient(90deg,#fff2d4,#ffd083,#d97925,#fff2d4);
+  background-size:220%;-webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:goldShift 6s linear infinite;
+}
+.btn{
+  border:1px solid var(--line);border-radius:999px;padding:14px 22px;
+  background:rgba(255,180,80,.06);color:#fff;font-size:9px;font-weight:700;
+  letter-spacing:2px;transition:.35s;box-shadow:inset 0 0 20px rgba(255,180,80,.025);
+}
+.btn:hover{transform:translateY(-3px);border-color:rgba(255,207,130,.65);background:rgba(255,180,80,.12);box-shadow:0 15px 45px rgba(217,108,32,.16)}
+.btn.primary{background:linear-gradient(135deg,#ffd78d,#cf6a1f);border:0;color:#180a03}
+
+/* intro */
+#intro{
+  display:grid;place-items:center;text-align:center;
+  background:
+    radial-gradient(circle at 50% 45%,rgba(211,92,21,.18),transparent 24%),
+    radial-gradient(circle at 50% 90%,rgba(255,169,65,.08),transparent 30%),
+    linear-gradient(180deg,#050302,#160804 58%,#070302);
+}
+.introDecor{position:absolute;inset:0;pointer-events:none}
+.introDecor:before,.introDecor:after{
+  content:"";position:absolute;border:1px solid rgba(244,185,95,.1);border-radius:50%;
+  left:50%;top:50%;transform:translate(-50%,-50%);
+}
+.introDecor:before{width:min(80vw,800px);height:min(80vw,800px)}
+.introDecor:after{width:min(60vw,600px);height:min(60vw,600px);border-style:dashed;animation:spin 40s linear infinite}
+.introBox{position:relative;z-index:2;width:min(92%,760px);padding:30px}
+.om{
+  margin:12px 0 2px;font:120px/1 "Cormorant Garamond",Georgia,serif;color:var(--gold2);
+  text-shadow:0 0 25px rgba(255,170,70,.8),0 0 90px rgba(255,113,21,.22);
+  animation:float 3.5s ease-in-out infinite;
+}
+.introBox h1{font:600 clamp(44px,8vw,92px)/.9 "Cormorant Garamond",Georgia,serif}
+.introBox p{max-width:580px;margin:22px auto 0;color:#ad9980;font-size:12px;line-height:1.8}
+.introBox .btn{margin-top:34px}
+
+/* gate */
+#gate{
+  display:grid;place-items:center;
+  background:
+    radial-gradient(circle at 50% 60%,rgba(213,104,28,.18),transparent 35%),
+    linear-gradient(180deg,#050302,#150804);
+}
+.gateScene{width:min(94vw,900px);height:min(94svh,850px);position:relative}
+.archOuter{
+  position:absolute;left:50%;bottom:2%;transform:translateX(-50%);
+  width:min(76vw,680px);height:86%;
+  border:12px solid #8e4a18;border-bottom:0;border-radius:360px 360px 0 0;
+  background:linear-gradient(90deg,#2a0d04,#5d230b 45%,#2b0d04);
+  box-shadow:0 0 70px rgba(255,126,34,.12),inset 0 0 40px #000;
+}
+.archOuter:before{
+  content:"";position:absolute;inset:12px;border:2px solid #d38a3c;border-bottom:0;border-radius:330px 330px 0 0;
+}
+.archInner{
+  position:absolute;left:50%;bottom:0;transform:translateX(-50%);
+  width:min(56vw,500px);height:72%;
+  border:4px solid #c87b31;border-bottom:0;border-radius:280px 280px 0 0;
+  background:#030201;overflow:hidden;perspective:1200px;
+}
+.gateDoor{
+  position:absolute;top:0;bottom:0;width:50%;z-index:5;
+  background:
+    repeating-linear-gradient(90deg,rgba(255,193,100,.06) 0 2px,transparent 2px 35px),
+    linear-gradient(90deg,#210a03,#61240b,#260b03);
+  border:3px solid #9e531c;
+  transition:transform 2.6s cubic-bezier(.77,0,.18,1);
+}
+.gateDoor:after{
+  content:"";position:absolute;inset:22px;border:1px solid rgba(235,166,83,.25);
+  background:radial-gradient(circle at 50% 50%,rgba(255,188,88,.08),transparent 45%);
+}
+.gateDoor.left{left:0;transform-origin:left}
+.gateDoor.right{right:0;transform-origin:right}
+.gateScene.open .gateDoor.left{transform:rotateY(-112deg)}
+.gateScene.open .gateDoor.right{transform:rotateY(112deg)}
+.archTop{
+  position:absolute;top:1%;left:50%;transform:translateX(-50%);z-index:8;text-align:center;
+}
+.archTop .symbol{font:70px Georgia;color:#ffd27e;text-shadow:0 0 30px #ff9b35}
+.archTop .line{width:180px;height:1px;background:linear-gradient(90deg,transparent,#d9974d,transparent);margin:4px auto}
+.gateMessage{position:absolute;z-index:9;top:25%;width:100%;text-align:center;transition:1s}
+.gateMessage h2{font:600 clamp(34px,7vw,66px) "Cormorant Garamond",Georgia,serif;color:#ffe4b1}
+.gateMessage p{margin-top:7px;font-size:8px;letter-spacing:4px;color:#a99378}
+.gateScene.open .gateMessage{opacity:0;transform:translateY(-25px)}
+.toran{position:absolute;z-index:12;top:9%;left:50%;transform:translateX(-50%);width:min(82vw,760px);height:55px;display:flex;justify-content:space-around;align-items:flex-start}
+.leaf{
+  width:22px;height:32px;border-radius:80% 15% 80% 15%;background:linear-gradient(135deg,#607b3a,#263817);
+  transform:rotate(35deg);box-shadow:0 4px 8px #0008;
+}
+.marigold{width:20px;height:20px;border-radius:50%;background:radial-gradient(circle,#ffd66e 0 25%,#d66c1c 27% 50%,#8e350d 53%);box-shadow:0 0 12px #f28b2a55}
+.bells{position:absolute;z-index:11;top:18%;left:0;right:0;display:flex;justify-content:space-between;padding:0 6%}
+.bell{width:26px;height:34px;background:linear-gradient(90deg,#8e5b22,#e3ad59,#79501e);border-radius:48% 48% 35% 35%;box-shadow:0 0 20px #e0a34a22;animation:sway 3s ease-in-out infinite}
+.bell:after{content:"";position:absolute;margin:28px 0 0 10px;width:6px;height:6px;border-radius:50%;background:#d89a45}
+.openGate{position:absolute;z-index:20;left:50%;bottom:3%;transform:translateX(-50%)}
+
+/* darshan */
+#darshan{background:#080302}
+.darshanScene{min-height:100svh;display:grid;place-items:center;padding:40px 18px}
+.shrine{
+  position:relative;width:min(96vw,1050px);height:min(94svh,900px);
+  border:1px solid rgba(244,185,95,.18);background:#0b0502;overflow:hidden;
+  box-shadow:0 35px 100px #000;
+}
+.shrine:before,.shrine:after{content:"";position:absolute;top:0;bottom:0;width:16%;z-index:2;background:linear-gradient(90deg,#170804,#5a250c55,#130603)}
+.shrine:before{left:0;border-right:1px solid #d08a3b22}.shrine:after{right:0;border-left:1px solid #d08a3b22}
+.shrineImage{
+  position:absolute;inset:0;background:
+    linear-gradient(180deg,#05020155 0,#05020100 30%,#05020155 100%),
+    url("ganesha.png") center 30%/cover no-repeat;
+  transform:scale(1.035);animation:slowZoom 12s ease-in-out infinite alternate;
+}
+.shrineImage:after{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 42%,transparent 0 25%,rgba(5,2,1,.42) 65%,rgba(5,2,1,.82));
+}
+.shrineHeader{position:absolute;z-index:6;top:28px;left:0;right:0;text-align:center}
+.shrineHeader .kicker{color:#d9b27c}
+.shrineHeader h2{margin-top:6px;font:600 clamp(38px,7vw,72px) "Cormorant Garamond",Georgia,serif;text-shadow:0 4px 30px #000}
+.shrineBottom{position:absolute;z-index:7;left:0;right:0;bottom:25px;text-align:center}
+.shrineBottom p{max-width:680px;margin:auto;color:#ead9bd;font-size:11px;line-height:1.8;text-shadow:0 2px 10px #000}
+.shrineBottom .btn{margin-top:18px}
+.diyaRow{position:absolute;z-index:8;left:5%;right:5%;bottom:25%;display:flex;justify-content:space-between}
+.diya{position:relative;width:35px;height:17px;border-radius:0 0 25px 25px;background:linear-gradient(#d77a27,#6e2708);box-shadow:0 5px 15px #000}
+.diya i{position:absolute;left:50%;top:-23px;transform:translateX(-50%);width:12px;height:22px;border-radius:55% 45% 55% 45%;background:radial-gradient(ellipse at 50% 75%,#fff6bf 0 18%,#ffd35d 30%,#f36d13 68%,transparent 70%);filter:drop-shadow(0 0 10px #ff9a31);animation:flame .8s ease-in-out infinite alternate}
+
+/* celebration */
+#celebrate{
+  display:grid;place-items:center;text-align:center;padding:40px 20px;
+  background:
+    radial-gradient(circle at 50% 50%,rgba(255,151,54,.12),transparent 35%),
+    linear-gradient(#0a0402,#180804);
+}
+.celebration{width:min(92%,850px)}
+.mandala{width:min(70vw,380px);aspect-ratio:1;margin:0 auto 20px;position:relative;border:1px solid #d99a4a55;border-radius:50%;box-shadow:0 0 70px #e88a2820,inset 0 0 50px #e88a2815;animation:spin 35s linear infinite}
+.mandala:before,.mandala:after{content:"";position:absolute;inset:9%;border:1px dashed #e6ad5d55;border-radius:50%}
+.mandala:after{inset:22%;border:1px solid #e6ad5d44}
+.mandalaCore{position:absolute;inset:0;display:grid;place-items:center;font:70px Georgia;color:#ffd27d;text-shadow:0 0 25px #ff9b35;animation:counterSpin 35s linear infinite}
+.celebration h2{font:600 clamp(42px,8vw,86px) "Cormorant Garamond",Georgia,serif;color:#ffe2ad}
+.celebration p{max-width:680px;margin:16px auto;color:#b9a38a;font-size:12px;line-height:2}
+.rituals{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:28px 0}
+.ritual{border:1px solid #f0b35b30;background:#fff3;border-radius:14px;padding:13px 16px;color:#e5c99e;font-size:9px;letter-spacing:1.5px;backdrop-filter:blur(10px);transition:.3s}
+.ritual:hover{transform:translateY(-3px);border-color:#f0b35b77}
+.celebrateNext{margin-top:8px}
+
+/* personalize */
+#personalize{display:grid;place-items:center;padding:30px 20px;background:radial-gradient(circle at 50% 45%,#8a3d1020,transparent 40%),#070302}
+.panel{width:min(100%,680px);padding:48px 28px;text-align:center;border:1px solid #f4b95f25;border-radius:28px;background:#ffffff04;box-shadow:0 35px 110px #0009;backdrop-filter:blur(18px)}
+.panel .miniOm{font:72px Georgia;color:#ffcb78;text-shadow:0 0 25px #ff8c27}
+.panel h2{font:600 clamp(38px,7vw,66px) "Cormorant Garamond",Georgia,serif;color:#ffe3ae}
+.panel p{max-width:520px;margin:12px auto;color:#a99780;font-size:12px;line-height:1.8}
+.nameInput{width:min(100%,470px);margin-top:28px;padding:17px 20px;border-radius:12px;border:1px solid #f4b95f35;outline:none;background:#030201;color:#fff;text-align:center;font-size:15px}
+.nameInput:focus{border-color:#f4b95f88;box-shadow:0 0 30px #e8832520}
+.panel .btn{margin-top:17px}
+
+/* card */
+#card{display:grid;place-items:center;padding:45px 18px;background:radial-gradient(circle,#7d350c15,transparent 42%),#070302}
+.cardPage{width:min(100%,560px);text-align:center}
+.cardPage>small{font-size:8px;letter-spacing:4px;color:#a58e73}
+.cardPage>h2{margin:10px 0 22px;font:600 clamp(34px,7vw,55px) "Cormorant Garamond",Georgia,serif;color:#ffe1aa}
+.card{
+  position:relative;width:100%;aspect-ratio:4/5;overflow:hidden;border-radius:24px;
+  border:1px solid #f4b95f66;box-shadow:0 40px 120px #000;
+  background:#230b03;
+}
+.cardImage{position:absolute;inset:0;background:linear-gradient(#1b0702a8,#1b0702b8),url("ganesha.png") center/cover;filter:saturate(1.05)}
+.cardImage:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 40%,transparent 0 24%,#12040180 65%,#090201e8 100%)}
+.cardFrame{position:absolute;inset:14px;border:1px solid #ffd27c88;border-radius:17px;z-index:2}
+.cardContent{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:35px;text-shadow:0 3px 18px #000}
+.cardOm{font:65px Georgia;color:#ffd27c}
+.cardTitle{font:600 clamp(29px,7vw,48px) "Cormorant Garamond",Georgia,serif;color:#ffebc5}
+.cardSub{margin-top:5px;font-size:8px;letter-spacing:4px;color:#f1c77e}
+.cardName{margin-top:22px;font:700 clamp(38px,9vw,64px) "Cormorant Garamond",Georgia,serif;color:#ffbd5e}
+.cardMessage{max-width:360px;margin-top:12px;color:#f0dfc3;font-size:10px;line-height:1.8}
+.cardFooter{position:absolute;bottom:25px;left:0;right:0;font-size:7px;letter-spacing:3px;color:#d0b58a}
+.actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+.actions button{padding:13px 18px;border-radius:50px;border:1px solid #f4b95f44;background:#ff9d3510;color:#fff;font-size:9px;letter-spacing:1px}
+.actions .primary{background:linear-gradient(135deg,#ffd78d,#d56d20);border:0;color:#180a03;font-weight:700}
+.replay{margin-top:15px;background:none!important;border:0!important;color:#887761!important}
+
+/* bottom progress */
+.progress{
+  position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:90;
+  width:min(300px,60vw);height:2px;background:#ffffff12;border-radius:4px;overflow:hidden;pointer-events:none
+}
+.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,#d96c20,#ffd27c);transition:width .7s}
+
+/* animations */
+@keyframes float{50%{transform:translateY(-12px)}}
+@keyframes goldShift{to{background-position:220%}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes counterSpin{to{transform:rotate(-360deg)}}
+@keyframes slowZoom{to{transform:scale(1.07)}}
+@keyframes sway{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+@keyframes flame{to{transform:translateX(-50%) scale(1.12) rotate(4deg)}}
+
+@media(max-width:650px){
+  .archOuter{width:88vw;height:80%}.archInner{width:67vw;height:68%}
+  .toran{top:12%}.bells{top:20%}
+  .shrine{height:92svh}.shrine:before,.shrine:after{width:8%}
+  .shrineHeader{top:20px}.shrineBottom{bottom:18px}
+  .diyaRow{bottom:27%}
+}
+</style>
+</head>
+
+<body>
+<canvas id="fx"></canvas>
+<div id="grain"></div>
+
+<!-- INTRO -->
+<section id="intro" class="screen">
+  <div class="introDecor"></div>
+  <div class="introBox">
+    <div class="kicker">KUSHAGRA INNOVATIONS PRESENTS</div>
+    <div class="om">ॐ</div>
+    <h1>Ganpati Bappa <span class="goldText">Morya</span></h1>
+    <p>Step into a cinematic digital darshan created for Ganesh Chaturthi — a small meeting point of devotion, design and code.</p>
+    <button class="btn primary" id="begin">ENTER THE DARSHAN ↗</button>
+  </div>
+</section>
+
+<!-- GATE -->
+<section id="gate" class="screen hidden">
+  <div class="gateScene" id="gateScene">
+    <div class="toran">
+      <span class="leaf"></span><span class="marigold"></span><span class="leaf"></span><span class="marigold"></span>
+      <span class="leaf"></span><span class="marigold"></span><span class="leaf"></span><span class="marigold"></span>
+      <span class="leaf"></span><span class="marigold"></span><span class="leaf"></span>
+    </div>
+    <div class="bells"><div class="bell"></div><div class="bell"></div></div>
+    <div class="archTop"><div class="symbol">ॐ</div><div class="line"></div></div>
+    <div class="archOuter"></div>
+    <div class="archInner">
+      <div class="gateMessage"><h2>शुभ आगमन</h2><p>YOUR DARSHAN BEGINS HERE</p></div>
+      <div class="gateDoor left"></div><div class="gateDoor right"></div>
+    </div>
+    <button class="btn primary openGate" id="openGate">OPEN THE TEMPLE GATES</button>
+  </div>
+</section>
+
+<!-- DARSHAN -->
+<section id="darshan" class="screen hidden">
+  <div class="darshanScene">
+    <div class="shrine">
+      <div class="shrineImage"></div>
+      <div class="shrineHeader">
+        <div class="kicker">DIVINE DARSHAN</div>
+        <h2>श्री गणेशाय नमः</h2>
+      </div>
+      <div class="diyaRow">
+        <div class="diya"><i></i></div><div class="diya"><i></i></div>
+        <div class="diya"><i></i></div><div class="diya"><i></i></div>
+      </div>
+      <div class="shrineBottom">
+        <p>Vakratunda Mahakaya. May Bappa remove every obstacle, bring wisdom to every decision, and bless every new beginning with happiness and prosperity.</p>
+        <button class="btn primary" id="toCelebrate">OFFER YOUR PRAYER ✦</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CELEBRATION -->
+<section id="celebrate" class="screen hidden">
+  <div class="celebration">
+    <div class="mandala"><div class="mandalaCore">ॐ</div></div>
+    <div class="kicker">CELEBRATE • PRAY • BEGIN AGAIN</div>
+    <h2>Ganesh Chaturthi</h2>
+    <p>Light a diya. Make a wish. Carry Bappa's blessings into everything you create, learn and begin.</p>
+    <div class="rituals">
+      <button class="ritual" data-ritual="diya">LIGHT THE DIYA</button>
+      <button class="ritual" data-ritual="flower">OFFER A FLOWER</button>
+      <button class="ritual" data-ritual="bell">RING THE BELL</button>
+    </div>
+    <button class="btn primary celebrateNext" id="toPersonalize">SEND A BLESSING WITH YOUR NAME ↗</button>
+  </div>
+</section>
+
+<!-- PERSONALIZE -->
+<section id="personalize" class="screen hidden">
+  <div class="panel">
+    <div class="miniOm">ॐ</div>
+    <div class="kicker">A PERSONAL BLESSING</div>
+    <h2>Apna naam likhiye</h2>
+    <p>Let Bappa's greeting carry your name. Create a keepsake you can save or share with family and friends.</p>
+    <input id="nameInput" class="nameInput" maxlength="30" placeholder="Your name..." autocomplete="name">
+    <br>
+    <button class="btn primary" id="generate">CREATE MY GREETING CARD ✨</button>
+  </div>
+</section>
+
+<!-- CARD -->
+<section id="card" class="screen hidden">
+  <div class="cardPage">
+    <small>YOUR PERSONALIZED GANESH CHATURTHI GREETING</small>
+    <h2>A blessing made for you</h2>
+    <div class="card" id="greetingCard">
+      <div class="cardImage"></div>
+      <div class="cardFrame"></div>
+      <div class="cardContent">
+        <div class="cardOm">ॐ</div>
+        <div class="cardTitle">Happy Ganesh Chaturthi</div>
+        <div class="cardSub">GANPATI BAPPA MORYA</div>
+        <div class="cardName" id="cardName">A Devotee</div>
+        <div class="cardMessage">May Lord Ganesha bless you and your loved ones with wisdom, happiness, prosperity and beautiful new beginnings.</div>
+      </div>
+      <div class="cardFooter">KUSHAGRA INNOVATIONS • DIGITAL DARSHAN</div>
+    </div>
+    <div class="actions">
+      <button class="primary" id="download">DOWNLOAD PNG</button>
+      <button id="share">SHARE ↗</button>
+    </div>
+    <button class="replay" id="replay">↻ EXPERIENCE AGAIN</button>
+  </div>
+</section>
+
+<div class="progress"><i id="progressBar"></i></div>
+
+<script>
+const ids=["intro","gate","darshan","celebrate","personalize","card"];
+let current=0;
+function show(id){
+  ids.forEach(x=>document.getElementById(x).classList.add("hidden"));
+  document.getElementById(id).classList.remove("hidden");
+  current=ids.indexOf(id);
+  document.getElementById("progressBar").style.width=((current)/(ids.length-1))*100+"%";
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+function burst(x,y,n=80){
+  for(let i=0;i<n;i++){
+    const a=Math.random()*Math.PI*2,s=Math.random()*7+2;
+    particles.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,life:1,r:Math.random()*2.6+.4});
+  }
+}
+
+/* subtle bell sound without an external audio file */
+let audioCtx;
+function bellSound(){
+  try{
+    audioCtx ||= new (window.AudioContext||window.webkitAudioContext)();
+    const o=audioCtx.createOscillator(),g=audioCtx.createGain();
+    o.type="sine";o.frequency.value=690;g.gain.setValueAtTime(.0001,audioCtx.currentTime);
+    g.gain.exponentialRampToValueAtTime(.12,audioCtx.currentTime+.015);
+    g.gain.exponentialRampToValueAtTime(.0001,audioCtx.currentTime+1.3);
+    o.connect(g).connect(audioCtx.destination);o.start();o.stop(audioCtx.currentTime+1.35);
+  }catch(e){}
+}
+
+document.getElementById("begin").onclick=()=>{
+  burst(innerWidth/2,innerHeight/2,150);bellSound();
+  setTimeout(()=>show("gate"),550);
+};
+document.getElementById("openGate").onclick=()=>{
+  document.getElementById("gateScene").classList.add("open");
+  burst(innerWidth/2,innerHeight*.7,240);bellSound();
+  setTimeout(()=>show("darshan"),2700);
+};
+document.getElementById("toCelebrate").onclick=()=>{
+  burst(innerWidth/2,innerHeight*.7,100);show("celebrate");
+};
+document.getElementById("toPersonalize").onclick=()=>show("personalize");
+
+document.querySelectorAll(".ritual").forEach(b=>{
+  b.onclick=()=>{
+    const r=b.dataset.ritual;
+    if(r==="bell")bellSound();
+    burst(innerWidth/2,innerHeight/2,70);
+    b.animate([{transform:"scale(1)"},{transform:"scale(1.06)"},{transform:"scale(1)"}],{duration:450});
+  };
+});
+
+const nameInput=document.getElementById("nameInput");
+const cardName=document.getElementById("cardName");
+document.getElementById("generate").onclick=()=>{
+  const n=nameInput.value.trim()||"A Devotee";
+  cardName.textContent=n;
+  burst(innerWidth/2,innerHeight/2,280);
+  setTimeout(()=>show("card"),650);
+};
+nameInput.onkeydown=e=>{if(e.key==="Enter")document.getElementById("generate").click()};
+
+document.getElementById("replay").onclick=()=>{
+  nameInput.value="";
+  document.getElementById("gateScene").classList.remove("open");
+  show("intro");
+};
+
+/* particle system */
+const fx=document.getElementById("fx"),ctx=fx.getContext("2d");
+let W=innerWidth,H=innerHeight,particles=[];
+function resize(){W=fx.width=innerWidth;H=fx.height=innerHeight}
+resize();addEventListener("resize",resize);
+function loop(){
+  ctx.clearRect(0,0,W,H);
+  particles=particles.filter(p=>p.life>0);
+  for(const p of particles){
+    p.x+=p.vx;p.y+=p.vy;p.vy+=.035;p.vx*=.985;p.life-=.012;
+    ctx.globalAlpha=p.life;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fillStyle=Math.random()>.3?"#ffbd62":"#fff0c9";ctx.shadowBlur=15;ctx.shadowColor="#ff8b22";ctx.fill();
+  }
+  ctx.globalAlpha=1;requestAnimationFrame(loop);
+}
+loop();
+
+/* falling petals / dust */
+setInterval(()=>{
+  if(document.querySelector(".hidden")?.id==="") return;
+  if(!document.getElementById("darshan").classList.contains("hidden") ||
+     !document.getElementById("celebrate").classList.contains("hidden")){
+    burst(Math.random()*innerWidth,-5,2);
+  }
+},250);
+
+/* high resolution PNG card using the same devotional artwork */
+function loadImage(src){
+  return new Promise((resolve,reject)=>{
+    const im=new Image();im.onload=()=>resolve(im);im.onerror=reject;im.src=src;
+  });
+}
+function roundedRect(c,x,y,w,h,r){
+  c.beginPath();c.moveTo(x+r,y);c.arcTo(x+w,y,x+w,y+h,r);c.arcTo(x+w,y+h,x,y+h,r);
+  c.arcTo(x,y+h,x,y,r);c.arcTo(x,y,x+w,y,r);c.closePath();
+}
+document.getElementById("download").onclick=async()=>{
+  const n=cardName.textContent;
+  const im=await loadImage("ganesha.png");
+  const c=document.createElement("canvas"),x=c.getContext("2d");
+  c.width=1080;c.height=1350;
+  const g=x.createRadialGradient(540,560,0,540,650,900);
+  g.addColorStop(0,"#8b3c10");g.addColorStop(.55,"#321006");g.addColorStop(1,"#070201");
+  x.fillStyle=g;x.fillRect(0,0,c.width,c.height);
+
+  x.save();x.globalAlpha=.42;
+  const scale=Math.max(1080/im.width,1350/im.height);
+  const iw=im.width*scale,ih=im.height*scale;
+  x.drawImage(im,(1080-iw)/2,(1350-ih)/2,iw,ih);x.restore();
+
+  const overlay=x.createLinearGradient(0,0,0,1350);
+  overlay.addColorStop(0,"#160501a8");overlay.addColorStop(.42,"#16050148");overlay.addColorStop(1,"#070201dd");
+  x.fillStyle=overlay;x.fillRect(0,0,1080,1350);
+
+  x.strokeStyle="#ffd27caa";x.lineWidth=3;roundedRect(x,35,35,1010,1280,30);x.stroke();
+  x.textAlign="center";x.fillStyle="#ffd27c";
+  x.font="700 22px Inter";x.letterSpacing="6px";x.fillText("GANPATI BAPPA MORYA",540,120);
+  x.fillStyle="#ffebc5";x.font="600 58px Georgia";x.fillText("Happy Ganesh Chaturthi",540,790);
+  x.fillStyle="#ffbd62";x.font="700 78px Georgia";x.fillText(n,540,900);
+  x.fillStyle="#f0dfc3";x.font="24px Inter";
+  x.fillText("May Lord Ganesha bless you and your loved ones",540,975);
+  x.fillText("with wisdom, happiness, prosperity and beautiful new beginnings.",540,1015);
+  x.fillStyle="#d0b58a";x.font="12px Inter";x.fillText("KUSHAGRA INNOVATIONS • DIGITAL DARSHAN",540,1250);
+
+  c.toBlob(blob=>{
+    const a=document.createElement("a");a.href=URL.createObjectURL(blob);
+    a.download=`Ganesh-Chaturthi-${n.replace(/\s+/g,"-")}.png`;a.click();
+    setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+  },"image/png");
+};
+
+document.getElementById("share").onclick=async()=>{
+  const n=cardName.textContent;
+  const text=`Ganpati Bappa Morya 🙏\n\nHappy Ganesh Chaturthi — ${n}\n\nCreated with Kushagra Innovations • Digital Darshan`;
+  if(navigator.share){
+    try{await navigator.share({title:"Happy Ganesh Chaturthi",text,url:location.href})}catch(e){}
+  }else{
+    try{await navigator.clipboard.writeText(text);alert("Greeting copied — ab Instagram ya WhatsApp par share kar sakte ho.")}catch(e){alert(text)}
+  }
+};
+</script>
+</body>
+</html>
