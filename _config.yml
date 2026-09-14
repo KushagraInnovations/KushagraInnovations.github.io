@@ -15,6 +15,13 @@ exclude:
   - Gemfile.lock
   - node_modules
   - vendor
+  exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - google5242485e84c2afb6.html
 
 # Sitemap defaults for Jekyll pages.
 defaults:
