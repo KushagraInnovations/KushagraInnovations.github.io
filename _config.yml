@@ -1,0 +1,24 @@
+# Kushagra Innovations - GitHub Pages / Jekyll configuration
+
+title: Kushagra Innovations
+description: Android app development, custom Java AIX extensions, UI/UX, utility apps, ASO, graphics and digital solutions.
+url: "https://kushagrainnovations.github.io"
+baseurl: ""
+
+plugins:
+  - jekyll-sitemap
+
+# Keep normal website assets/files available.
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# Sitemap defaults for Jekyll pages.
+defaults:
+  - scope:
+      path: ""
+    values:
+      sitemap: true
