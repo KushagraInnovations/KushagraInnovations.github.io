@@ -1,9 +1,8 @@
 from browser import document
+import turtle
 
 turtle.set_defaults(
-    turtle_canvas_wrapper=document["turtle-div"],
-    canvwidth=768,
-    canvheight=768
+    turtle_canvas_wrapper=document["turtle-div"]
 )
 
 import turtle
