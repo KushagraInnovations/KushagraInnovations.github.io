@@ -1,13 +1,12 @@
 from browser import document
-import turtle
 
-# Tell Brython's turtle module where to render the drawing.
 turtle.set_defaults(
     turtle_canvas_wrapper=document["turtle-div"],
     canvwidth=768,
     canvheight=768
 )
 
+import turtle
 
 # ============================================================
 # SHRI KRISHNA - MODIFIED TURTLE ART
@@ -18,7 +17,6 @@ wn = turtle.Screen()
 wn.setup(768, 768)
 wn.bgcolor("black")
 wn.title("Shri Krishna - Modified Line Art")
-wn.tracer(1, 8)
 
 # ---------------- MAIN DRAWING ----------------
 b = turtle.Turtle()
@@ -810,6 +808,4 @@ d.end_fill()
 d.ht()
 
 # ---------------- FINISH ----------------
-wn.update()
-pass  # Browser version: no blocking sleep
-wn.mainloop()
+turtle.done()
