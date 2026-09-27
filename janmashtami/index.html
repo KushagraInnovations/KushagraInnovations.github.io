@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Janmashtami Experience — Kushagra Innovations</title>
+
   <style>
     *{box-sizing:border-box}
     html,body{margin:0;min-height:100%;background:#050505;color:#fff;font-family:Inter,system-ui,sans-serif}
@@ -16,14 +17,14 @@
     #turtle-div{width:768px;height:768px;max-width:100%;margin:auto}
     #turtle-div svg{display:block;margin:auto;max-width:100%;height:auto}
     .note{width:min(100%,800px);text-align:center;color:#999;font-size:13px;margin-top:14px}
+    #error{display:none;width:min(100%,800px);margin-top:14px;padding:14px;border:1px solid #7f1d1d;border-radius:12px;background:#1b0909;color:#fecaca;white-space:pre-wrap;font:13px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace}
   </style>
 
-  <!-- Brython executes Python directly in the browser. -->
   <script src="https://cdn.jsdelivr.net/npm/brython@3/brython.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/brython@3/brython_stdlib.js"></script>
 </head>
 
-<body onload="brython()">
+<body>
   <div class="top">
     <div class="title">🦚 Janmashtami Experience</div>
     <a class="back" href="https://kushagrainnovations.github.io/">← Portfolio</a>
@@ -37,6 +38,36 @@
     Shri Krishna artwork rendered from the original Python Turtle program.
   </div>
 
-  <script type="text/python" src="Krishna-Janmashtami.py"></script>
+  <div id="error"></div>
+
+  <script>
+    window.addEventListener("load", async function () {
+      const errorBox = document.getElementById("error");
+
+      try {
+        // Start Brython first, then explicitly fetch the Python source.
+        brython({debug: 1});
+
+        const response = await fetch("Krishna-Janmashtami.py", {cache: "no-store"});
+        if (!response.ok) {
+          throw new Error("Could not load Krishna-Janmashtami.py (HTTP " + response.status + ")");
+        }
+
+        const source = await response.text();
+
+        // Run the fetched Python source directly through Brython.
+        __BRYTHON__.runPythonSource(source, {
+          id: "krishna-janmashtami",
+          debug: 1
+        });
+      } catch (err) {
+        console.error(err);
+        errorBox.style.display = "block";
+        errorBox.textContent =
+          "Python could not run.\n\n" +
+          (err && err.stack ? err.stack : String(err));
+      }
+    });
+  </script>
 </body>
 </html>
