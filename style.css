@@ -576,3 +576,236 @@
   }
 
 }
+
+
+/* =========================================================
+   UNIVERSAL CONTENT / LEGAL PAGES
+   Reuses the exact existing site theme.
+   Add class="content-page" to <body>.
+========================================================= */
+
+.content-page .page-hero{
+  padding:90px 0 55px;
+}
+.content-page .page-hero-inner{
+  max-width:900px;
+}
+.content-page .page-kicker{
+  font-size:11px;
+  letter-spacing:2px;
+  font-weight:800;
+  color:#8e94a2;
+  margin-bottom:18px;
+}
+.content-page .page-title{
+  font:700 clamp(44px,6vw,72px)/1.04 "Space Grotesk";
+  letter-spacing:-2.5px;
+  margin:0;
+}
+.content-page .page-subtitle{
+  max-width:760px;
+  color:var(--muted);
+  font-size:16px;
+  line-height:1.8;
+  margin:20px 0 0;
+}
+.content-page .page-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:22px;
+}
+.content-page .page-meta span{
+  border:1px solid var(--line);
+  background:#0d0f14;
+  border-radius:100px;
+  padding:7px 11px;
+  color:#858b98;
+  font-size:10px;
+  letter-spacing:.4px;
+}
+.content-page .content-layout{
+  display:grid;
+  grid-template-columns:230px minmax(0,1fr);
+  gap:28px;
+  align-items:start;
+  padding-bottom:100px;
+}
+.content-page .content-sidebar{
+  position:sticky;
+  top:100px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:#0d0f14;
+  padding:18px;
+}
+.content-page .content-sidebar-label{
+  color:#8e94a2;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:1.7px;
+  margin-bottom:12px;
+}
+.content-page .content-sidebar a{
+  display:block;
+  padding:8px 9px;
+  border-radius:8px;
+  color:#858b98;
+  font-size:11px;
+  text-decoration:none;
+}
+.content-page .content-sidebar a:hover{
+  color:#fff;
+  background:#ffffff08;
+}
+.content-page .content-card{
+  border:1px solid var(--line);
+  border-radius:20px;
+  background:#0d0f14;
+  overflow:hidden;
+}
+.content-page .content-inner{
+  padding:42px;
+}
+.content-page .content-section{
+  padding:0 0 34px;
+  margin:0 0 34px;
+  border-bottom:1px solid var(--line);
+}
+.content-page .content-section:last-child{
+  border-bottom:0;
+  margin-bottom:0;
+  padding-bottom:0;
+}
+.content-page .content-section h2{
+  font:700 25px/1.25 "Space Grotesk";
+  letter-spacing:-1px;
+  margin:0 0 13px;
+}
+.content-page .content-section h3{
+  font:700 17px/1.35 "Space Grotesk";
+  margin:22px 0 8px;
+}
+.content-page .content-section p{
+  color:#a4a9b5;
+  font-size:14px;
+  line-height:1.85;
+  margin:10px 0;
+}
+.content-page .content-section ul{
+  color:#a4a9b5;
+  font-size:14px;
+  line-height:1.8;
+  padding-left:22px;
+}
+.content-page .content-section li{
+  margin:6px 0;
+}
+.content-page .content-note{
+  border-left:3px solid var(--accent);
+  background:#ffffff05;
+  padding:15px 17px;
+  border-radius:10px;
+  margin:18px 0;
+}
+.content-page .content-note p{
+  margin:0;
+}
+.content-page .content-service{
+  border:1px solid var(--line);
+  border-radius:13px;
+  padding:17px;
+  background:#101219;
+  margin:12px 0;
+}
+.content-page .content-service strong{
+  display:block;
+  color:#fff;
+  font-size:14px;
+  margin-bottom:5px;
+}
+.content-page .content-service p{
+  margin:0;
+}
+.content-page .content-table-wrap{
+  overflow-x:auto;
+  margin:18px 0;
+}
+.content-page .content-table{
+  width:100%;
+  min-width:650px;
+  border-collapse:collapse;
+  font-size:12px;
+}
+.content-page .content-table th,
+.content-page .content-table td{
+  text-align:left;
+  vertical-align:top;
+  padding:12px;
+  border:1px solid var(--line);
+  color:#a4a9b5;
+}
+.content-page .content-table th{
+  background:#11131a;
+  color:#fff;
+  font-weight:700;
+}
+.content-page .content-contact{
+  border:1px solid var(--line);
+  border-radius:15px;
+  padding:22px;
+  background:radial-gradient(circle at 10% 0%,#7c3aed18,transparent 35%),#101219;
+}
+.content-page .content-contact strong{
+  display:block;
+  color:#fff;
+  font:700 18px "Space Grotesk";
+  margin-bottom:7px;
+}
+.content-page .content-contact p{
+  margin:0;
+}
+.content-page .content-contact a{
+  color:#c084fc;
+}
+.content-page code{
+  color:#67e8f9;
+  font:12px "SFMono-Regular",Consolas,monospace;
+  overflow-wrap:anywhere;
+}
+.content-page .policy-footer-note{
+  color:#626875;
+  font-size:11px;
+  text-align:center;
+  margin-top:25px;
+}
+
+@media(max-width:850px){
+  .content-page .page-hero{
+    padding:65px 0 40px;
+  }
+  .content-page .content-layout{
+    grid-template-columns:1fr;
+  }
+  .content-page .content-sidebar{
+    position:static;
+  }
+  .content-page .content-sidebar a{
+    display:inline-block;
+    margin:2px;
+  }
+}
+@media(max-width:520px){
+  .content-page .page-hero{
+    padding:55px 0 32px;
+  }
+  .content-page .page-title{
+    font-size:43px;
+  }
+  .content-page .content-inner{
+    padding:25px 20px;
+  }
+  .content-page .content-section h2{
+    font-size:22px;
+  }
+}
