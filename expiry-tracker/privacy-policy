@@ -1,1 +1,145 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<meta name="description" content="Privacy Policy for Expiry Tracker by Kushagra Innovations.">
+<link rel="canonical" href="https://kushagrainnovations.github.io/expiry-tracker/privacy-policy.html">
+<title>Privacy Policy — Expiry Tracker | Kushagra Innovations</title>
+<link rel="stylesheet" href="privacy-policy.css">
+</head>
+<body>
+<header class="topbar"><nav class="nav">
+<a class="brand" href="https://kushagrainnovations.github.io/"><span class="brand-mark">KI</span><span>Kushagra Innovations</span></a>
+<a class="back" href="https://kushagraininnovations.github.io/">← Back to Website</a>
+</nav></header>
+
+<header class="hero">
+<span class="eyebrow">Privacy Policy</span>
+<h1>Expiry Tracker</h1>
+<p>This Privacy Policy explains how Expiry Tracker, developed by Kushagra Innovations, handles information when you use the app.</p>
+<div class="meta"><span>Developer: Kushagra Innovations</span><span>Version 1.0</span><span>Package: com.kushagrainnovations.expirytracker</span><span>Effective: September 27, 2026</span></div>
+</header>
+
+<main class="layout"><article class="policy"><div class="policy-inner">
+<nav class="toc"><h2>Contents</h2><ol>
+<li><a href="#intro">Introduction</a></li><li><a href="#data">Information You Provide</a></li><li><a href="#storage">Local Storage</a></li><li><a href="#photos">Photos & Camera</a></li><li><a href="#ocr">OCR & Barcode Scanning</a></li><li><a href="#foodfacts">Open Food Facts</a></li><li><a href="#ads">Advertising & AdMob</a></li><li><a href="#notifications">Notifications</a></li><li><a href="#network">Internet & Network</a></li><li><a href="#backup">Backup, Export & Sharing</a></li><li><a href="#deletion">Data Deletion</a></li><li><a href="#thirdparty">Third-Party Services</a></li><li><a href="#security">Security</a></li><li><a href="#children">Children's Privacy</a></li><li><a href="#changes">Changes</a></li><li><a href="#contact">Contact</a></li>
+</ol></nav>
+
+<section id="intro"><h2>1. Introduction</h2>
+<p>Kushagra Innovations ("we", "us", or "our") develops Expiry Tracker ("the App"). Expiry Tracker helps users track product expiry dates, purchase information, return or replacement deadlines, warranties, subscriptions, bills and other important dates.</p>
+<p>The App can be used without creating an account or logging in. Most information used for core functionality is stored locally on your Android device.</p>
+<div class="note"><strong>Important:</strong> This policy describes the current implementation identified for version 1.0. Third-party services such as Google AdMob and Open Food Facts may process certain information outside the App according to their own policies.</div>
+</section>
+
+<section id="data"><h2>2. Information You Provide</h2>
+<p>You may voluntarily enter information needed to organize and track items, including:</p>
+<ul><li>Item/product name, category, type and notes</li><li>Seller or retailer information</li><li>Price and purchase information</li><li>Invoice number, order ID and serial number</li><li>Purchase, expiry, return and replacement dates</li><li>Warranty start/end dates</li><li>Subscription start/renewal dates</li><li>Billing frequency and custom reminder settings</li><li>User name, if you choose to enter one</li></ul>
+<p>Because fields such as notes, titles and user name are free-form, you could enter personal or sensitive information. We recommend entering only information necessary for your intended use.</p>
+</section>
+
+<section id="storage"><h2>3. Information Stored Locally</h2>
+<p>The App's core tracking information is stored locally on your Android device. The Room database stores tracked item information such as titles, categories, prices, dates, seller details, invoice or serial numbers, notes and local image references.</p>
+<p>Local settings include notification preference, reminder timing, theme mode, currency symbol and user name.</p>
+<p>The reviewed version uses standard Room/SQLite and local preference storage. The local database and preferences are <strong>not encrypted using a dedicated database-encryption mechanism such as SQLCipher</strong>.</p>
+<p>The App does not automatically upload the core Room database or local settings to a Kushagra Innovations server because the App does not operate a custom backend for this data.</p>
+</section>
+
+<section id="photos"><h2>4. Photos, Camera & Documents</h2>
+<p>Expiry Tracker may use the camera to capture receipt/bill images and Android's visual media picker to select existing images.</p>
+<h3>Camera images</h3><p>A temporary image file is created in the App's internal cache directory when you capture a receipt.</p>
+<h3>Gallery images</h3><p>When you select an existing image, the App stores a local content URI reference rather than automatically creating a persistent copy.</p>
+<h3>Image processing</h3><p>Images used for receipt text recognition or barcode scanning are processed locally using Google ML Kit. The reviewed implementation does not upload those images to a custom server.</p>
+</section>
+
+<section id="ocr"><h2>5. OCR & Barcode Scanning</h2>
+<div class="service"><strong>Google ML Kit — Text Recognition</strong>Receipt images can be processed on-device to recognize text and help extract receipt information.</div>
+<div class="service"><strong>Google ML Kit — Barcode Scanning</strong>Camera frames containing barcodes are processed on-device to detect barcode values.</div>
+<p>After a barcode is detected, the barcode number may be sent to Open Food Facts for product information.</p>
+</section>
+
+<section id="foodfacts"><h2>6. Open Food Facts Product Lookup</h2>
+<p>When a barcode is successfully detected, Expiry Tracker can use the barcode number to request product information from the Open Food Facts API.</p>
+<p>The request may include the detected barcode number and a custom User-Agent. Open Food Facts may receive normal network information associated with the request, such as an IP address.</p>
+<p>The API can return product name, brand, category and a product image URL. The App can download and display the returned product image.</p>
+<p>Endpoint identified in the reviewed implementation: <code>https://world.openfoodfacts.org/api/v2/product/{barcode}.json</code></p>
+<p>Open Food Facts is a separate third-party service and its handling of information is governed by its own policies.</p>
+</section>
+
+<section id="ads"><h2>7. Advertising & Google AdMob</h2>
+<p>Expiry Tracker displays banner advertisements using Google AdMob, provided by Google LLC. The reviewed implementation contains banner placements in the Settings and Items screens.</p>
+<p>The Google Mobile Ads SDK may process information needed to request, deliver, measure and personalize advertisements. Depending on device, region and advertising configuration, this may include:</p>
+<ul><li>IP address and network information</li><li>Advertising ID or other advertising-related identifiers</li><li>Device and app-related information needed for advertising</li><li>Information associated with ad requests and ad interactions</li></ul>
+<p>These advertising-related practices are controlled in significant part by Google and its advertising systems. Kushagra Innovations does not operate the AdMob infrastructure.</p>
+<p>The reviewed project currently uses Google's official AdMob test App ID and test banner Ad Unit ID. Production configuration may be used before public release.</p>
+<div class="note"><strong>Consent note:</strong> The reviewed version did not contain Google's User Messaging Platform (UMP) SDK. If consent is required for users in a particular region, the advertising/consent configuration should be updated before serving ads there.</div>
+</section>
+
+<section id="notifications"><h2>8. Notifications & Reminders</h2>
+<p>If enabled, Expiry Tracker uses Android local notifications to notify you about items expiring soon or today.</p>
+<p>The current implementation uses WorkManager for a periodic local check. It reads the local database, calculates remaining days and creates a notification when configured conditions are met.</p>
+<p>Notifications may display the item title, expiry date and days remaining. They are generated locally and do not use Firebase Cloud Messaging.</p>
+</section>
+
+<section id="network"><h2>9. Internet & Network Access</h2>
+<p>The App requests INTERNET permission because advertising and barcode product lookup require network access.</p>
+<table><thead><tr><th>Service</th><th>Purpose</th><th>Information involved</th></tr></thead><tbody>
+<tr><td>Google AdMob</td><td>Banner advertising</td><td>Advertising-related device/network information such as IP address and advertising identifiers</td></tr>
+<tr><td>Open Food Facts</td><td>Product lookup after barcode scanning</td><td>Detected barcode and normal network request information</td></tr>
+<tr><td>Coil</td><td>Display product images</td><td>Requested product image URL and normal network request information</td></tr>
+</tbody></table>
+<p>The App does not contain a Kushagra Innovations custom backend for storing tracked items or account information.</p>
+</section>
+
+<section id="backup"><h2>10. Backup, Export & Sharing</h2>
+<h3>Android backup</h3><p>The current Android configuration enables Android Auto Backup. Depending on Android/device and Google account backup settings, local app data may be included in the Android backup system.</p>
+<h3>Manual export</h3><p>The App can export tracked database data as JSON. When you export, the data is passed to Android's Share Sheet and you select the destination application.</p>
+<h3>Sharing an item</h3><p>The App can share an individual item summary. Depending on the item, this can include title, expiry date, category, price and notes.</p>
+<div class="note">Data shared through Android's Share Sheet may be received and processed by the application or service you choose. Review the recipient's privacy practices before sharing sensitive information.</div>
+</section>
+
+<section id="deletion"><h2>11. Data Deletion</h2>
+<h3>Individual items</h3><p>You can delete individual tracked items. Deleting an item removes its corresponding database record from the local Room database.</p>
+<h3>Uninstalling</h3><p>Under standard Android behavior, uninstalling the App or clearing app data through Android settings removes the App's local database, settings and cached camera files from the device, subject to Android backup/restore behavior.</p>
+<p>The current version does not provide a dedicated "Delete All Data" button.</p>
+</section>
+
+<section id="thirdparty"><h2>12. Third-Party Services & SDKs</h2>
+<table><thead><tr><th>Service / SDK</th><th>Purpose</th><th>Data handling</th></tr></thead><tbody>
+<tr><td>Google AdMob</td><td>Banner advertising</td><td>May process advertising-related identifiers, IP/network information and ad request information.</td></tr>
+<tr><td>Google ML Kit — Text Recognition</td><td>Receipt OCR</td><td>Processes images/text on-device according to the reviewed implementation.</td></tr>
+<tr><td>Google ML Kit — Barcode Scanning</td><td>Barcode detection</td><td>Processes camera frames on-device according to the reviewed implementation.</td></tr>
+<tr><td>Open Food Facts</td><td>Product lookup</td><td>Receives detected barcode values through an API request and may receive normal network information.</td></tr>
+<tr><td>OkHttp</td><td>Network requests</td><td>Used for Open Food Facts API communication.</td></tr>
+<tr><td>Coil</td><td>Image loading</td><td>Used to download/display product images returned by the lookup service.</td></tr>
+</tbody></table>
+<p>The reviewed project did not contain Firebase Analytics, Crashlytics, AppsFlyer, Mixpanel, Amplitude, OneSignal, Sentry, a custom backend, Gemini API or OpenAI API.</p>
+</section>
+
+<section id="security"><h2>13. Security</h2>
+<p>We use standard Android application storage and sandboxing mechanisms for local data. Temporary camera files are kept in the App's internal cache directory.</p>
+<p>Network communication identified for Open Food Facts uses HTTPS.</p>
+<p>The local Room/SQLite database and preference storage in the reviewed version are not protected with dedicated database encryption. We therefore do not represent local data as encrypted.</p>
+<p>No method of electronic storage or transmission can be guaranteed completely secure. Users should avoid storing unnecessary sensitive information and use normal Android device security measures.</p>
+</section>
+
+<section id="children"><h2>14. Children's Privacy</h2>
+<p>The reviewed version does not contain specific child-directed features, age gates or parental-control mechanisms.</p>
+<p>The App is a general-purpose utility. Users should not provide sensitive personal information unless necessary for their use of the App.</p>
+</section>
+
+<section id="changes"><h2>15. Changes to This Privacy Policy</h2>
+<p>We may update this Privacy Policy when the App's features, data practices, advertising configuration or third-party services change.</p>
+<p>When an updated policy is published, the Effective Date may be updated. We encourage users to review this page periodically.</p>
+</section>
+
+<section id="contact"><h2>16. Contact Us</h2>
+<p>If you have questions, concerns or requests regarding this Privacy Policy or the privacy practices of Expiry Tracker, contact us:</p>
+<div class="contact"><h3>Kushagra Innovations</h3><p>Developer of Expiry Tracker<br>Email: <a href="mailto:kushagra.electron.me@gmail.com">kushagra.electron.me@gmail.com</a><br>Website: <a href="https://kushagrainnovations.github.io/" target="_blank" rel="noopener">kushagrainnovations.github.io</a></p></div>
+</section>
+
+</div></article></main>
+<footer class="footer">© 2026 Kushagra Innovations · Expiry Tracker · Privacy Policy</footer>
+</body></html>
