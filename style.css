@@ -809,3 +809,81 @@
     font-size:22px;
   }
 }
+/* =========================================================
+   UNIVERSAL CONTENT PAGE - MOBILE SIDEBAR
+   ========================================================= */
+
+.content-page .mobile-policy-menu {
+  display: none;
+}
+
+@media (max-width: 850px) {
+
+  .content-page .mobile-policy-menu {
+    display: block;
+    padding-bottom: 18px;
+  }
+
+  .content-page .mobile-policy-menu button {
+    width: 100%;
+    padding: 13px 16px;
+    border: 1px solid var(--line);
+    border-radius: 11px;
+    background: #0d0f14;
+    color: #fff;
+    font: 600 13px Inter, system-ui, sans-serif;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .content-page .content-layout {
+    position: relative;
+  }
+
+  .content-page .content-sidebar {
+    position: fixed;
+    z-index: 50;
+    top: 76px;
+    left: 14px;
+    right: 14px;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+
+    transition:
+      opacity .2s ease,
+      transform .2s ease,
+      visibility .2s ease;
+  }
+
+  .content-page .content-sidebar.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .content-page .content-sidebar a {
+    display: block;
+    padding: 10px 11px;
+  }
+
+}
+
+
+@media (max-width: 520px) {
+
+  .content-page .mobile-policy-menu {
+    padding-bottom: 14px;
+  }
+
+  .content-page .content-sidebar {
+    top: 70px;
+    left: 12px;
+    right: 12px;
+    max-height: calc(100vh - 85px);
+  }
+
+}
