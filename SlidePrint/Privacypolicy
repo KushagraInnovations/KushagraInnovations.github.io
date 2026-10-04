@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SlidePrint Privacy Policy — Kushagra Innovations</title>
+
+    <meta name="description"
+          content="Privacy Policy for SlidePrint by Kushagra Innovations. Learn how SlidePrint handles PDF files, local data, advertising, and user privacy.">
+
+    <link rel="canonical"
+          href="https://kushagrainnovations.github.io/slideprint/privacy-policy.html">
+
+    <link rel="stylesheet" href="../style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+          rel="stylesheet">
+</head>
+
+<body class="content-page">
+
+<header class="site-header">
+    <div class="nav-container">
+
+        <a href="../index.html" class="brand">
+            <img src="../logo.png"
+                 alt="Kushagra Innovations"
+                 class="brand-logo">
+            <span>Kushagra Innovations</span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="../index.html#about">About</a>
+            <a href="../index.html#services">Services</a>
+            <a href="../index.html#projects">Projects</a>
+            <a href="../index.html#contact">Contact</a>
+        </nav>
+
+        <button class="nav-toggle"
+                type="button"
+                aria-label="Open navigation"
+                aria-expanded="false">
+            ☰
+        </button>
+
+    </div>
+</header>
+
+
+<main>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+
+        <div class="page-hero-inner">
+
+            <div class="page-kicker">
+                LEGAL · SLIDEPRINT
+            </div>
+
+            <h1 class="page-title">
+                Privacy Policy
+            </h1>
+
+            <p class="page-subtitle">
+                How SlidePrint handles your documents, local data,
+                advertising and privacy.
+            </p>
+
+            <div class="page-meta">
+                Effective Date: October 4, 2026
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="content-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="content-sidebar">
+
+            <div class="content-sidebar-label">
+                On this page
+            </div>
+
+            <nav class="policy-nav">
+
+                <a href="#introduction">01 Introduction</a>
+
+                <a href="#information">02 Information We Collect</a>
+
+                <a href="#pdf-files">03 PDF Files & Processing</a>
+
+                <a href="#local-storage">04 Local Data Storage</a>
+
+                <a href="#temporary-files">05 Temporary Files</a>
+
+                <a href="#internet">06 Internet Permission</a>
+
+                <a href="#advertising">07 Advertising & AdMob</a>
+
+                <a href="#third-party">08 Third-Party Services</a>
+
+                <a href="#account">09 No Account Required</a>
+
+                <a href="#sharing">10 Data Sharing</a>
+
+                <a href="#backup">11 Data Backup</a>
+
+                <a href="#retention">12 Data Retention & Deletion</a>
+
+                <a href="#security">13 Data Security</a>
+
+                <a href="#children">14 Children's Privacy</a>
+
+                <a href="#choices">15 Your Choices</a>
+
+                <a href="#changes">16 Changes</a>
+
+                <a href="#contact">17 Contact Us</a>
+
+                <a href="#developer">18 Developer Information</a>
+
+            </nav>
+
+        </aside>
+
+
+        <!-- CONTENT -->
+        <article class="content-card">
+
+            <div class="content-inner">
+
+
+                <section class="content-section" id="introduction">
+
+                    <h2>01. Introduction</h2>
+
+                    <p>
+                        Kushagra Innovations ("we", "us", or "our")
+                        operates the <strong>SlidePrint</strong> mobile
+                        application ("App"). This Privacy Policy explains
+                        how SlidePrint handles information when you use
+                        our App.
+                    </p>
+
+                    <p>
+                        By using SlidePrint, you agree to the practices
+                        described in this Privacy Policy.
+                    </p>
+
+                </section>
+
+
+                <section class="content-section" id="information">
+
+                    <h2>02. Information We Collect</h2>
+
+                    <p>
+                        SlidePrint is designed to work primarily with
+                        files and information stored on your device.
+                    </p>
+
+                    <p>
+                        We do <strong>not</strong> require you to create
+                        an account or provide personal information such as:
+                    </p>
+
+                    <ul>
+                        <li>Name</li>
+                        <li>Email address</li>
+                        <li>Phone number</li>
+                        <li>Postal address</li>
+                        <li>Contacts</li>
+                        <li>Precise location</li>
+                        <li>Account credentials</li>
+                    </ul>
+
+                    <p>
+                        SlidePrint does not have a developer-operated
+                        server or cloud system for uploading or storing
+                        your PDF documents.
+                    </p>
+
+                </section>
+
+
+                <section class="content-section" id="pdf-files">
+
+                    <h2>03. PDF Files and Document Processing</h2>
+
+                    <p>
+                        SlidePrint allows you to select PDF files from
+                        your device using Android's Storage Access Framework.
+                    </p>
+
+                    <p>
+                        When you select a PDF, the App processes the file
+                        locally on your device for features such as
+                        viewing, preparing, and printing.
+                    </p>
+
+                    <p>
+                        Your PDF files and their contents are
+                        <strong>not uploaded to Kushagra Innovations'
+                        servers.</strong>
+                    </p>
+
+                    <p>
+                        SlidePrint does not intentionally transmit your
+                        PDF files or their contents to our servers,
+                        cloud storage, or the developer.
+                    </p>
+
+                    <p>
+                        The files you select remain under your control
+                        on your device and are accessed only when required
+                        for the functionality of the App.
+                    </p>
+
+                </section>
+
+
+                <section class="content-section" id="local-storage">
+
+                    <h2>04. Local Data Storage</h2>
+
+                    <p>
+                        SlidePrint stores certain information locally
+                        on your device to provide and improve the App
+                        experience.
+                    </p>
+
+                    <h3>Processing History</h3>
+
+                    <p>The App may store:</p>
+
+                    <ul>
+                        <li>File path or file reference</li>
+                        <li>Processing date</li>
+                        <li>Page count</li>
+                        <li>Print mode</li>
+                        <li>Other information required to display your processing history</li>
+                    </ul>
+
+                    <p>
+                        This information is stored locally using the
+                        App's on-device database.
+                    </p>
+
+                    <h3>App Settings</h3>
+
+                    <p>
+                        SlidePrint may locally store your preferences,
+                        such as:
+                    </p>
+
+                    <ul>
+                        <li>Paper size</li>
+                        <li>Print quality</li>
+                        <li>Page orientation</li>
+                        <li>Other selected application settings</li>
+                    </ul>
+
+                    <p>
+                        These settings are stored on your device and
+                        are not intentionally transmitted to our servers.
+                    </p>
+
+                </section>
+
+
+                <section class="content-section" id="temporary-files">
+
+                    <h2>05. Temporary Files</h2>
+
+                    <p>
+                        During PDF processing, SlidePrint may temporarily
+                        create generated PDF files in the application's
+                        cache directory.
+                    </p>
+
+                    <p>
+                        These temporary files are used to complete the
+                        requested operation and are stored locally on
+                        your device.
+                    </p>
+
+                    <p>
+                        Temporary files may be removed by the App or the
+                        Android operating system when they are no longer
+                        required.
+                    </p>
+
+                </section>
+
+
+                <section class="content-section" id="internet">
+
+                    <h2>06. Internet Permission</h2>
+
+                    <p>
+                        SlidePrint uses the Android
+                        <code>INTERNET</code> permission.
+                    </p>
+
+                    <p>
+                        The primary purpose of internet access is to allow
+                        the App to load and display advertisements provided
+                        by Google AdMob.
+                    </p>
+
+                    <p>
+                        Internet access used for advertising does not mean
+                        that SlidePrint uploads your PDF documents to our
+                        servers.
+                    </p>
+
+                </section>
+
+
+                <section class="content-section" id="advertising">
+
+                    <h2>07. Advertising and Google AdMob</h2>
+
+                    <p>
+                        SlidePrint uses <strong>Google AdMob</strong>
+                        to display advertisements.
+                    </p>
+
+                    <p>
+                        Google AdMob is a third-party advertising service
+                        provided by Google LLC. AdMob may collect and
+                        process certain information from your device for
+                        purposes such as delivering, measuring, and
+                        personalizing advertisements, subject to Google's
+                        applicable policies and settings.
+                    </p>
+
+                    <p>
+                        Depending on your device, region, advertising
+                        settings, and applicable laws, information that
+                        may be processed by advertising services can include:
+                    </p>
+
+                    <ul>
+                        <li>Advertising ID or similar device identifiers</li>
+                        <li>Device information</li>
+                        <li>IP address</li>
+                        <li>Advertising and interaction information</li>
+                        <li>Diagnostics and performance-related information</li>
+                    </ul>
+
+                    <p>
+                        The information collected by Google through its
+                        advertising services is governed by Google's own
+                        privacy policies and terms.
+                    </p>
+
+                    <p>
+                        For more information about how Google handles data,
+                        please review
+                        <a href="https://policies.google.com/privacy"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            Google's Privacy Policy
+                        </a>.
+                    </p>
+
+                </section>
+
+
+                <section class="content-section" id="third-party">
+
+                    <h2>08. Third-Party Services</h2>
+
+                    <p>
+                        SlidePrint currently uses the following
+                        third-party service:
+                    </p>
+
+                    <div class="content-service">
+
+                        <h3>Google AdMob</h3>
+
+                        <p>
+                            <strong>Purpose:</strong>
+                            Displaying advertisements within the App.
+                        </p>
+
+                    </div>
+
+                    <p>
+                        SlidePrint does not currently use Firebase Analytics,
+                        Firebase Crashlytics, or a separate third-party
+                        analytics platform for user tracking.
+                    </p>
+
+                    <p>
+                        Third-party services may independently collect
+                        information according to their own privacy policies.
+                        We recommend reviewing the privacy policies of
+                        third-party service providers.
+                    </p>
+
+                </section>
+
+
+                <section class="content-section" id="account">
+
+                    <h2>09. No Account or Sign-In Required</h2>
+
+                    <p>
+                        SlidePrint does not require users to create an
+                        account or sign in to use the App.
+                    </p>
+
+                    <p>
+                        There is currently no user registration, password
+                        system, or developer-managed user account associated
+                        with SlidePrint.
+                    </p>
+
+                </section>
+
+
+                <section class="content-section" id="sharing">
+
+                    <h2>10. Data Sharing</h2>
+
+                    <p>
+                        Kushagra Innovations does not sell or rent your
+                        personal information.
+                    </p>
+
+                    <p>
+                        SlidePrint does not upload your PDF documents or
+                        their contents to a developer-controlled server.
+                    </p>
+
+                    <p>
+                        Information processed by third-party services such
+                        as Google AdMob may be handled by those providers
+                        according to their own privacy policies and
+                        applicable laws.
+                    </p>
+
+                </section>
+
+
+                <section class="content-section" id="backup">
+
+                    <h2>11. Data Backup</h2>
+
+                    <p>
+                        SlidePrint may be included in Android's device
+                        backup mechanisms depending on your Android device,
+                        operating-system settings, and the App's backup
+                        configuration.
+                    </p>
+
+                    <p>
+                        Any Android backup is managed by Android/Google
+                        and is associated with your device/account environment.
+                        Kushagra Innovations does not receive or directly
+                        control your personal Google Drive backup.
+                    </p>
+
+                    <p>
+                        You can manage Android backup settings through your
+                        device's Android/Google account settings.
+                    </p>
+
+                </section>
+
+
+                <section class="content-section" id="retention">
+
+                    <h2>12. Data Retention and Deletion</h2>
+
+                    <p>
+                        Because SlidePrint primarily stores its application
+                        data locally on your device, you can manage or remove
+                        this information through the App or Android system
+                        settings.
+                    </p>
+
+                    <p>
+                        You may delete your processing history using the
+                        <strong>Clear All History</strong> option available
+                        in the App, where applicable.
+                    </p>
+
+                    <p>
+                        You may also delete locally stored application data
+                        by uninstalling SlidePrint or clearing the App's
+                        storage through Android settings.
+                    </p>
+
+                    <p>
+                        Deleting the App or clearing its storage may remove
+                        locally stored history, settings, and other
+                        application data.
+                    </p>
+
+                    <p>
+                        Third-party services such as Google AdMob may retain
+                        information according to their own policies and
+                        retention practices.
+                    </p>
+
+                </section>
+
+
+                <section class="content-section" id="security">
+
+                    <h2>13. Data Security</h2>
+
+                    <p>
+                        We take reasonable measures to design SlidePrint so
+                        that user documents and application data are processed
+                        locally where possible.
+                    </p>
+
+                    <p>
+                        However, no method of electronic storage or
+                        transmission can be guaranteed to be completely secure.
+                    </p>
+
+                    <p>
+                        SlidePrint does not intentionally transmit your PDF
+                        documents or their contents to Kushagra Innovations'
+                        servers.
+                    </p>
+
+                </section>
+
+
+                <section class="content-section" id="children">
+
+                    <h2>14. Children's Privacy</h2>
+
+                    <p>
+                        SlidePrint is not specifically directed toward
+                        children under the age of 13.
+                    </p>
+
+                    <p>
+                        We do not knowingly collect personal information
+                        from children through SlidePrint.
+                    </p>
+
+                    <p>
+                        If you believe that a child has provided personal
+                        information through the App, please contact us so
+                        that we can review the situation and take appropriate
+                        action.
+                    </p>
+
+                </section>
+
+
+                <section class="content-section" id="choices">
+
+                    <h2>15. Your Choices</h2>
+
+                    <p>
+                        You can control your use of SlidePrint by:
+                    </p>
+
+                    <ul>
+                        <li>Selecting which PDF files the App can access</li>
+                        <li>Managing Android app permissions and settings</li>
+                        <li>Clearing application history</li>
+                        <li>Clearing application storage</li>
+                        <li>Uninstalling the App</li>
+                        <li>Managing advertising and privacy settings available through your Android device and Google services</li>
+                    </ul>
+
+                </section>
+
+
+                <section class="content-section" id="changes">
+
+                    <h2>16. Changes to This Privacy Policy</h2>
+
+                    <p>
+                        We may update this Privacy Policy from time to time
+                        to reflect changes to the App, our practices, legal
+                        requirements, or third-party services.
+                    </p>
+
+                    <p>
+                        When we make changes, we will update the
+                        <strong>Effective Date</strong> at the beginning
+                        of this Privacy Policy.
+                    </p>
+
+                    <p>
+                        You are encouraged to review this Privacy Policy
+                        periodically.
+                    </p>
+
+                </section>
+
+
+                <section class="content-section" id="contact">
+
+                    <h2>17. Contact Us</h2>
+
+                    <p>
+                        If you have questions, concerns, or requests
+                        regarding this Privacy Policy or SlidePrint's
+                        data practices, you can contact us at:
+                    </p>
+
+                    <div class="content-contact">
+
+                        <strong>Kushagra Innovations</strong>
+
+                        <p>
+                            Email:
+                            <a href="mailto:kushagra.electron.me@gmail.com">
+                                kushagra.electron.me@gmail.com
+                            </a>
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+                <section class="content-section" id="developer">
+
+                    <h2>18. Developer Information</h2>
+
+                    <div class="content-service">
+
+                        <p>
+                            <strong>App Name:</strong> SlidePrint
+                        </p>
+
+                        <p>
+                            <strong>Package Name:</strong>
+                            com.kushagrainnovations.slideprint
+                        </p>
+
+                        <p>
+                            <strong>Developer:</strong>
+                            Kushagra Innovations
+                        </p>
+
+                        <p>
+                            <strong>Version:</strong> 1.0.0
+                        </p>
+
+                        <p>
+                            <strong>Minimum Android Version:</strong>
+                            Android 7.0 (API 24)
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+                <div class="policy-footer-note">
+                    © 2026 Kushagra Innovations. All rights reserved.
+                </div>
+
+
+            </div>
+
+        </article>
+
+    </section>
+
+</main>
+
+
+<footer class="site-footer">
+
+    <div class="footer-inner">
+
+        <div>
+            © 2026 Kushagra Innovations. All rights reserved.
+        </div>
+
+        <div class="footer-links">
+            <a href="../index.html">Home</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const sidebar = document.querySelector(".content-sidebar");
+    const navToggle = document.querySelector(".nav-toggle");
+    const policyLinks = document.querySelectorAll(".policy-nav a");
+
+    if (!sidebar) return;
+
+    /*
+     * Mobile sidebar toggle
+     */
+    if (navToggle) {
+
+        navToggle.addEventListener("click", function () {
+
+            const isOpen = sidebar.classList.toggle("is-open");
+
+            navToggle.setAttribute(
+                "aria-expanded",
+                isOpen ? "true" : "false"
+            );
+
+            navToggle.textContent = isOpen ? "✕" : "☰";
+
+        });
+
+    }
+
+
+    /*
+     * Close sidebar after selecting a section on mobile
+     */
+    policyLinks.forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            if (window.innerWidth <= 850) {
+
+                sidebar.classList.remove("is-open");
+
+                if (navToggle) {
+
+                    navToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                    navToggle.textContent = "☰";
+
+                }
+
+            }
+
+        });
+
+    });
+
+
+    /*
+     * Close sidebar when resizing back to desktop
+     */
+    window.addEventListener("resize", function () {
+
+        if (window.innerWidth > 850) {
+
+            sidebar.classList.remove("is-open");
+
+            if (navToggle) {
+
+                navToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                navToggle.textContent = "☰";
+
+            }
+
+        }
+
+    });
+
+});
+</script>
+
+</body>
+</html>
